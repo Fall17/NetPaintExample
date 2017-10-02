@@ -1,3 +1,5 @@
+// Andrew Marrufo
+
 package quizzes;
 
 import java.awt.Point;
@@ -9,13 +11,14 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
+// import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 // Classes need to be implemented
 import model.PaintObject;
 import model.Oval;
 import model.Picture;
 import model.Rectangle;
+import model.Line;
 /**  
   * There will be many compile time errors until you implement 
   * PaintObject inheritance hierarchy.
@@ -28,7 +31,6 @@ import model.Rectangle;
   * A Canvas exists in this BorderPane that will draw all
   * PaintObjects stored in the Vector<PaintObject> object.
   * 
-  * @author YOUR NAME
  */
 public class DrawVectorOfPaintObjects extends Application {
 
