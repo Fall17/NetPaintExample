@@ -1,19 +1,28 @@
+// Andrew Marrufo
+
 package model;
 
-import javafx.scene.paint.Color;
+import java.awt.Color;
 import java.awt.Point;
+import java.io.Serializable;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Rectangle extends PaintObject {
+// Allows for the creation of rectangles using specific colors on a canvas.
+public class Rectangle extends PaintObject implements Serializable {
 
+	// constructor
 	public Rectangle(Color color, Point point1, Point point2) {
 		super(color, point1, point2);
 	}
 
+	// draws rectangle on canvas
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.setFill(color);
+		gc.setFill(ColorTypeConverter.Awt2Fx(color));
+		// the purpose of these variables is to allow for the anchor point of a PaintObject
+		// to not have to be in the top right-hand corner of the image (so that the user can draw
+		// the object however they'd like)
 		double highX;
 		double lowX;
 		double highY;

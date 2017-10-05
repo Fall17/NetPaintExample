@@ -1,16 +1,26 @@
+// Andrew Marrufo
+
 package model;
 
 import java.awt.Point;
+import java.io.Serializable;
+
 import javafx.scene.canvas.GraphicsContext;
 
-public class Picture extends PaintObject {
+// Allows for the creation of picture on a canvas.
+public class Picture extends PaintObject implements Serializable {
 
+	// constructor
 	public Picture(Point point1, Point point2, String image) {
 		super(point1, point2, image);
 	}
 
+	// draws picture on canvas
 	@Override
 	public void draw(GraphicsContext gc) {
+		// the purpose of these variables is to allow for the anchor point of a PaintObject
+		// to not have to be in the top right-hand corner of the image (so that the user can draw
+		// the object however they'd like)
 		double highX;
 		double lowX;
 		double highY;
